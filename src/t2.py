@@ -215,7 +215,7 @@ class Turtlebot3():
 
         # Compare to ground truth
         pos_diff = np.linalg.norm(self.mean[:2] - gt_state[:2])
-        yaw_diff = min(abs(self.mean[2] - gt_state[2]), abs(gt_state[2] - self.mean[2]))
+        yaw_diff = min(abs(self.mean[2] - gt_state[2]), abs(self.mean[2] + gt_state[2]))
         rospy.loginfo("\nGround truth: " + str(gt_state) + "\n Position error: " + \
             str(pos_diff) + "; Yaw error: "+str(yaw_diff))
 
